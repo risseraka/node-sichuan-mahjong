@@ -78,7 +78,7 @@ server = (function (router) {
         },
         "home": function handleHome() {
             var html =
-                $.standardHead("This page is built out of 100% organic JavaScript",
+                $.standardHead("Welcome to SiChuan Mahjong",
                     $.body((function () {
                         if (games.length) {
                             return games.reduce(function (res, game) {
@@ -170,7 +170,7 @@ router.get.add(/^\/([^\.]+)\.([^\.]+$)/,
 router.get.add("/",
     function handleUI(req, res, next) {
         var html =
-            $.standardHead("This page is built out of 100% organic JavaScript",
+            $.standardHead("Welcome to SiChuan Mahjong",
                 $.body(
                     $.form({id: "responseForm"},
                         $.input({
