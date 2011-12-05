@@ -20,7 +20,7 @@ Object.prototype.each = function each(func) {
 
 HTMLElement.prototype.addEvent = function addEvent(event, callback) {
     events[event] = callback;
-    this.addEventListener.apply(this, arguments);
+    this.addEventListener.call(this, event, callback, false);
 };
 
 HTMLElement.prototype.removeEvent = function removeEvent(event) {
@@ -91,6 +91,15 @@ function ajaxRequest(command, callback) {
     }, false);
     xhr.send(null);
 }
+
+[
+    "newGameButton",
+    "getGamesButton",
+    "responseSelect",
+    "serverResponse"
+].each(function (id) {
+    window[id] = document.getElementById(id);
+});
 
 function output(str) {
     serverResponse.value = str + "\n" + serverResponse.value;
@@ -219,7 +228,7 @@ function handleNewGame(response) {
     }
 }
 
-function newGame() {
+function newGame(event) {
     try {
         responseSelect.removeEvent("change");
 
@@ -244,7 +253,7 @@ function sendJoin(event) {
     event.preventDefault();
 }
 
-function listGames() {
+function listGames(event) {
     try {
         responseSelect.removeEvent("change");
 
