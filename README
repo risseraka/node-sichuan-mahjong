@@ -1,1 +1,36 @@
-Sichuan Mahjong server in node.js
+Sichuan Mahjong server plus minimal client in node.js
+
+Installation:
+The server currently doesn't need any other modules to be installed.
+
+Use:
+1- Run node on server.js
+2- Visit http://localhost:8080/
+3- Hit the "New Game" button
+4- Open a new window, same URL
+5- Hit the "List Games" button
+6- Select game in drop down menu
+7- Repeat steps 4- to 6- 2 more times
+8- Ready up
+9- Choose a "secret" suit
+10- Enjoy!
+
+All interactions are done using the drop down menu.
+
+Rules:
+Visit http://www.blackdragoncafe.com/journal/2008/12/18/how-to-play-sichuan-style-mahjong
+
+Disclaimer:
+This is obviously a work in progress.
+It was and is a way for me to get to learn nodejs.
+The only external thing used is choreographer.js by Han which I have slightly changed to suit it to my use.
+Do not hesitate to contribute. : )
+
+Future:
+- WebSockets:
+From my POV, WebSockets are more adequate for this kind of server.
+I intended to complete a Comete version before going into WebSockets.
+It would most definitly simplify client-server communications code though.
+- Visual Client:
+I have visual assets for the tiles but being no big front programmer I will try to thoroughly finish the server first.
+- Suggestions?
