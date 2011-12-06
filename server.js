@@ -158,16 +158,16 @@ router.get.add(/^\/([^\.]+)\.([^\.]+$)/,
                     }
                 } catch (e) {
                     // console.log("GET", file + "." + ext + ": Not authorized");
-                    router.defaultNotFound(req, res);
+                    router.notFound(req, res);
                 }
             });
         } catch (e) {
             // console.log("GET", file + "." + ext + ": Not authorized");
-            router.defaultNotFound(req, res);
+            router.notFound(req, res);
         }
     });
 
-router.get.add("/ui",
+router.get.add("/",
     function handleUI(req, res, next) {
         var html =
             $.standardHead("This page is built out of 100% organic JavaScript",
