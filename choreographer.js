@@ -1,3 +1,13 @@
+/**
+ * The Choreographer
+ *  Your server is my stage -- dirt simple URL routing for Node.js.
+ *
+ * by Han (slightly modified by Adrien Risser)
+ *
+ * http://github.com/laughinghan/choreographer
+ *
+ */
+
 var parse = require('url').parse;
 
 GLOBAL.router = (function () {
