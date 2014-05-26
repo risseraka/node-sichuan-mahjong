@@ -31,6 +31,11 @@ require("./lib").loadLibrary([{
         },
         function writePlainResponse(res, text) {
             writeResponse(res, "text/Plain", text);
+        },
+        function outputList(list, callBack) {
+            if (list && list.join) {
+                callBack(list.join(", "));
+            }
         }
     ]}
 ]);

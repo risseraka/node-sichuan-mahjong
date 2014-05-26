@@ -10,7 +10,7 @@
 
 var parse = require('url').parse;
 
-GLOBAL.router = (function () {
+var router = (function () {
     //router, to be passed to `require('http').createServer()`
     var router = function router(req, res) {
         var path = parse(req.url).pathname,
@@ -94,3 +94,5 @@ GLOBAL.router = (function () {
     };
     return router;
 }());
+
+module.exports = router;

@@ -5,7 +5,6 @@ function servStart() {
 }
 
 require("./commons");
-require("./choreographer");
 
 // HTTP Server 
 var //connect = require("connect"),
@@ -19,10 +18,11 @@ var //connect = require("connect"),
                 connect.favicon(),
                 servStart) :
             require("http").createServer(servStart)),
-    newMajiang = require("./majiang").newMajiang,
+    newMajiang = require("./majiang"),
     $ = require("./domizer").$,
     then,
-    server;
+    server,
+    router = require('./choreographer');
 
 server = (function (router) {
     var that = {},
